@@ -408,7 +408,8 @@ export default {
           // }
         ]
       }
-
+      // 设置options前 清空画布，防止缓存
+      charts.clear()
       charts.setOption(options)
       window.addEventListener('resize', function () {
         charts.resize()
