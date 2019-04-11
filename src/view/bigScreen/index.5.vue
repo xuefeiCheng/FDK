@@ -18,7 +18,7 @@
 import 'echarts/lib/echarts'
 import nameMap from '@/utils/nameMap.js'
 import JsonList from '@/utils/expandEcharts/index'
-import {loopShowTooltip} from '@/utils/expandEcharts/echarts-tooltip-carousel'
+import {loopShowTooltip} from '@/utils/expandEcharts/lib/echarts-tooltip-carousel'
 const chinaOpt = {
   name: 'china',
   goDown: true,

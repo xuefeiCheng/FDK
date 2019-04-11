@@ -18,7 +18,7 @@
 import 'echarts/lib/echarts'
 import nameMap from '@/utils/nameMap.js'
 import JsonList from '@/utils/expandEcharts/index'
-import {loopShowTooltip} from '@/utils/expandEcharts/lib/echarts-tooltip-carousel'
+import {MyTooltipC} from '@/utils/expandEcharts/lib/myTooltip'
 var planePath = 'path://M1705.06,1318.313v-89.254l-319.9-221.799l0.073-208.063c0.521-84.662-26.629-121.796-63.961-121.491c-37.332-0.305-64.482,36.829-63.961,121.491l0.073,208.063l-319.9,221.799v89.254l330.343-157.288l12.238,241.308l-134.449,92.931l0.531,42.034l175.125-42.917l175.125,42.917l0.531-42.034l-134.449-92.931l12.238-241.308L1705.06,1318.313z'
 const chinaOpt = {
   name: 'china',
@@ -170,9 +170,6 @@ export default {
   },
   mounted () {
     this.drawTransferMap(chinaOpt, chinaData)
-    // setInterval(() => {
-    //   this.items = [11, 22, 3333]
-    // }, 3000)
   },
   methods: {
     checkCity (city) {
@@ -200,7 +197,9 @@ export default {
     },
     drawTransferMap (opt, data) {
       var _this = this
+      let box = document.getElementById('bigMap')
       let charts = this.$echarts.init(document.getElementById('bigMap'))
+      let myTooltip = new MyTooltipC('bigMap')
       // 自定义地图
       this.$echarts.registerMap('china', JsonList[opt.name])
       // 初始化地图
@@ -218,19 +217,31 @@ export default {
         },
         tooltip: {
           trigger: 'item',
+          backgroundColor: 'transparent',
+          position (pos) {
+            let position = myTooltip.getPosOrSize('pos', pos)
+            return position
+          },
           formatter: function (params) {
+            let text = ''
             if (params.seriesType === 'effectScatter') {
-              return params.data.name + '' + params.data.value[2]
+              text = params.data.name + '' + params.data.value[2]
             } else if (params.seriesType === 'lines') {
-              return params.data.fromName + '>' + params.data.toName + ':' + params.data.value
+              text = params.data.fromName + '>' + params.data.toName + ':' + params.data.value
             } else if (params.seriesType === 'map') {
               if (params.data) {
-                return params.data.name + ':' + params.data.value
+                text = params.data.name + ':' + params.data.value
               } else {
-                return ''
+                text = ''
               }
             } else {
-              return params.name
+              text = params.name
+            }
+            if (text) {
+              let tooltipDom = myTooltip.getTooltipDom(text)
+              return tooltipDom
+            } else {
+              return text
             }
           }
         },
@@ -409,7 +420,6 @@ export default {
       // 设置options前 清空画布，防止缓存
       charts.clear()
       charts.setOption(options)
-      loopShowTooltip(charts, options, {loopSeries: false, seriesIndex: 1, interval: 5000})
       window.addEventListener('resize', function () {
         charts.resize()
       })
@@ -427,6 +437,31 @@ export default {
         } else {
           // console.log('click budong')
         }
+      })
+      let timer = null
+      const autoPlay = _ => {
+        let index = 0
+        if (timer) clearInterval(timer)
+        timer = setInterval(_ => {
+          charts.dispatchAction({
+            type: 'showTip',
+            seriesIndex: 1,
+            dataIndex: index
+          })
+          index++
+          if (index >= data.length) {
+            index = 0
+          }
+        }, 5000)
+      }
+      autoPlay()
+      let delay = null
+      box.addEventListener('mousemove', e => {
+        if (delay) clearTimeout(delay)
+        if (timer) clearInterval(timer)
+        delay = setTimeout(_ => {
+          autoPlay()
+        }, 5000)
       })
       return charts
     }

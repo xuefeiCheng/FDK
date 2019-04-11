@@ -11,12 +11,13 @@ Vue.use(Router)
 const initialRouteMap = [
   { path: '/', redirect: 'bigScreen' },
   { path: '/bigScreen',
-    redirect: '/bigScreen/global',
+    redirect: '/bigScreen/echarts',
     component: {
       render (c) { return c('router-view') }
     },
     children: [
-      { path: 'global', name: 'Page500', component: () => import('@/view/bigScreen/index') }
+      { path: 'global', name: 'Page500', component: () => import('@/view/bigScreen/index') },
+      { path: 'echarts', name: 'mapTooltip', component: () => import('@/view/echarts/mapTooltip') }
     ]
   },
   { path: '/login', component: () => import('@/view/loginPage/Login') },
