@@ -1,5 +1,5 @@
 <template>
-<!-- 自动轮播 -->
+<!--以起点为主的轨迹图 自动轮播 -->
   <div style="width:100%;height:100%;background:linear-gradient(#020b25, #0e2566, #020b25);box-sizing: border-box;">
     <div style="width:80%;height:80%;margin:auto">
       <box-border :options="options">
