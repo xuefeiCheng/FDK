@@ -18,6 +18,7 @@
 import 'echarts/lib/echarts'
 import nameMap from '@/utils/nameMap.js'
 import JsonList from '@/utils/expandEcharts/index'
+import {loopShowTooltip} from '@/utils/expandEcharts/echarts-tooltip-carousel'
 const chinaOpt = {
   name: 'china',
   goDown: true,
@@ -173,9 +174,6 @@ export default {
     // }, 3000)
   },
   methods: {
-    say () {
-      alert('jajja')
-    },
     checkCity (city) {
       let res = false
       const list = ['浙江', '杭州市', '宁波市', '温州市', '绍兴市', '湖州市', '嘉兴市', '金华市', '衢州市', '台州市', '丽水市', '舟山市']
@@ -411,6 +409,7 @@ export default {
       // 设置options前 清空画布，防止缓存
       charts.clear()
       charts.setOption(options)
+      loopShowTooltip(charts, options, {loopSeries: false, seriesIndex: 0, interval: 5000})
       window.addEventListener('resize', function () {
         charts.resize()
       })
