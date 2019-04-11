@@ -17,7 +17,8 @@ const initialRouteMap = [
     },
     children: [
       { path: 'global', name: 'Page500', component: () => import('@/view/bigScreen/index') },
-      { path: 'echarts', name: 'mapTooltip', component: () => import('@/view/echarts/mapTooltip') }
+      { path: 'echarts', name: 'mapTooltip', component: () => import('@/view/echarts/mapTooltip') },
+      { path: 'echarts-base', name: 'mapTooltip', component: () => import('@/view/echarts/baseMapTooltip') }
     ]
   },
   { path: '/login', component: () => import('@/view/loginPage/Login') },
