@@ -132,3 +132,14 @@ export const zhejiangData = [
     s_longitude: 121.428599
   }
 ]
+export const zhejiangData1 = [
+  {
+    d_city: '杭州市',
+    d_latitude: 30.287459,
+    d_longitude: 120.153576,
+    num: 2666,
+    s_city: '宁波市',
+    s_latitude: 29.868388,
+    s_longitude: 121.549792
+  }
+]
