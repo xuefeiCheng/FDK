@@ -46,7 +46,7 @@
 
 <script>
 import Map from '@/components/echarts/map'
-import {chinaOpt, chinaData, zhejiangOpt, zhejiangData, zhejiangData1} from 'static/data/data'
+import {chinaOpt, chinaData, chinaData1, zhejiangOpt, zhejiangData, zhejiangData1} from 'static/data/data'
 export default {
   name: 'bigScreen',
   data () {
@@ -74,10 +74,12 @@ export default {
     setInterval(() => {
       if (this.echartaData.zhejiangData === zhejiangData) {
         this.echartaData.zhejiangData = zhejiangData1
+        this.echartaData.chinaData = chinaData1
       } else {
         this.echartaData.zhejiangData = zhejiangData
+        this.echartaData.chinaData = chinaData
       }
-    },5000)
+    }, 60000)
   },
   methods: {
     say (params) {
