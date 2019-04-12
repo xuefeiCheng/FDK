@@ -44,42 +44,42 @@ export default {
 .triangle .shape_bottom_left{
     width:0;
     height:0;
-    border-width:0 30px 30px 0;
+    border-width:0 10px 10px 0;
     border-style:solid;
     border-color:transparent transparent #00DAFC;/*透明 透明  灰*/
     position: absolute;
-    bottom: -1px;
-    left: -1px;
+    bottom: 0;
+    left: 0;
 }
 .triangle .shape_bottom_right{
     width:0;
     height:0;
-    border-width:0 0 30px 30px;
+    border-width:0 0 10px 10px;
     border-style:solid;
     border-color:transparent transparent #00DAFC;/*透明 透明  灰*/
     position: absolute;
-    bottom: -1px;
-    right: -1px;
+    bottom: 0;
+    right: 0;
 }
 .triangle .shape_top_left{
     width:0;
     height:0;
-    border-width:30px 30px 0 0;
+    border-width:10px 10px 0 0;
     border-style:solid;
     border-color:#00DAFC transparent transparent;/*灰 透明 透明 */
     position: absolute;
-    top: -1px;
-    left: -1px;
+    top: 0;
+    left: 0;
 }
 .triangle .shape_top_right{
     width:0;
     height:0;
-    border-width:30px 0 0 30px;
+    border-width:10px 0 0 10px;
     border-style:solid;
     border-color:#00DAFC transparent transparent;/*灰 透明 透明 */
     position: absolute;
-    top: -1px;
-    right: -1px;
+    top: 0;
+    right: 0;
 }
 /*  矩形 rectangle */
 .rectangle .shape_bottom_left{
