@@ -95,6 +95,38 @@ export const chinaData = [
     s_longitude: 120.19
   }
 ]
+export const chinaData1 = [
+  // beijing 116.403613,39.916458
+  // shanghai 121.470766,31.233706
+  {
+    d_city: '西安',
+    d_latitude: 34.348938,
+    d_longitude: 108.944165,
+    s_city: '上海',
+    s_latitude: 31.233706,
+    s_longitude: 121.470766
+  },
+  // chengdu 104.073481,30.659054
+  // xian 108.944165,34.348938
+  {
+    d_city: '西安',
+    d_latitude: 34.348938,
+    d_longitude: 108.944165,
+    num: 233,
+    s_city: '成都',
+    s_latitude: 30.659054,
+    s_longitude: 104.073481
+  },
+  {
+    d_city: '西安',
+    d_latitude: 34.348938,
+    d_longitude: 108.944165,
+    num: 233,
+    s_city: '浙江',
+    s_latitude: 30.26,
+    s_longitude: 120.19
+  }
+]
 export const zhejiangOpt = {
   name: 'zhejiang',
   goDown: false,
