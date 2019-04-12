@@ -115,7 +115,9 @@ export default {
           show: false,
           min: 0,
           max: 10000,
-          calculable: true,
+          // splitNumber: 3, // 分几级
+          // seriesIndex: 0, // 指定取哪个系列的数据
+          calculable: true, // true 柱状展示 false 分级别展示
           inRange: {
             color: ['#50a3ba', '#eac736', '#d94e5d']
           },
