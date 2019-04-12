@@ -19,6 +19,11 @@
         <div class="bs-body-top">
           <box-border :options="options">
             <div style='width:100%;height:100%;' id='bigMap'></div>
+            <!-- 左侧展示框 -->
+            <!-- 右侧列表滚动 -->
+            <div class="list border-all">
+              <scroll :items='items' :speed='speedVal'></scroll>
+            </div>
           </box-border>
         </div>
         <div class="bs-body-bottom border-all flex">
@@ -48,7 +53,9 @@ export default {
       options: {
         border: true,
         shape: 'triangle'
-      }
+      },
+      items: ['列表第一项', '列表项目2', '这是第三条', '第四条信息'],
+      speedVal: 3000
     }
   },
   mounted () {
@@ -365,6 +372,15 @@ export default {
   }
   .bs-body-left .bs-body-top {
     flex:0 0 70%;
+  }
+  /* 滚动列表 */
+  .list {
+    position: absolute;
+    width: 300px;
+    height: 500px;
+    overflow: hidden;
+    top: 10px;
+    right: 10px;
   }
   .bs-body-left .bs-body-bottom {
     flex:0 0 29%;
