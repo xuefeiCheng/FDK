@@ -11,6 +11,7 @@ import echarts from 'echarts'
 import Fui from '@/components/ui/index'
 import Fanimates from '@/components/animate/index'
 import '../static/css/iconfont.css'
+import '../static/css/bs-global.css'
 
 // 引入配置组件
 import App from './App'

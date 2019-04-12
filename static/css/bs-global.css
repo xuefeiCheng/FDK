@@ -1,0 +1,17 @@
+/* 通用样式 */
+.border-all {
+  border: 1px solid #269fed73;
+  box-shadow: 0 0 3px #269fed;
+}
+.flex {
+  display: flex;
+}
+.flex-direction-row {
+  flex-direction: row;
+}
+.flex-direction-column {
+  flex-direction: column;
+}
+.flex-space-between {
+  justify-content: space-between;
+}

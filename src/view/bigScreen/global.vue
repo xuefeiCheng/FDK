@@ -1,0 +1,127 @@
+<template>
+<!-- 界面布局 -->
+  <div class="bs-box">
+    <div class="bs-header flex">
+      <div class="bs-header-left">
+        <div class="bs-title">高频骚扰防范业务</div>
+        <div class="bs-title-subtext">High Frequency Harassment Protection Business</div>
+      </div>
+      <div class="bs-header-right flex flex-space-between">
+        <div class="bs-sons border-all"></div>
+        <div class="bs-sons border-all"></div>
+        <div class="bs-sons border-all"></div>
+        <div class="bs-sons border-all"></div>
+        <div class="bs-sons border-all"></div>
+      </div>
+    </div>
+    <div class="bs-body flex flex-space-between">
+      <div class="bs-body-left flex flex-direction-column flex-space-between">
+        <div class="bs-body-top">
+          <box-border :options="options"></box-border>
+        </div>
+        <div class="bs-body-bottom border-all flex">
+          <div class="bs-sons"></div>
+          <div class="bs-sons"></div>
+          <div class="bs-sons"></div>
+        </div>
+      </div>
+      <div class="bs-body-right flex flex-direction-column flex-space-between">
+        <div class="bs-body-top border-all"></div>
+        <div class="bs-body-bottom border-all"></div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'bigScreen',
+  data () {
+    return {
+      options: {
+        border: true,
+        shape: 'triangle'
+      }
+    }
+  },
+  mounted () {},
+  methods: {},
+  beforeDestroy () {}
+
+}
+</script>
+
+<style scoped>
+  /* 大屏样式 */
+  .bs-box {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 25px;
+    background:linear-gradient(#020b25, #0e2566, #020b25);
+  }
+  .bs-header {
+    width: 100%;
+    height: 8%;
+    min-height: 80px;
+    box-sizing: border-box;
+    padding: 5px 0;
+  }
+  .bs-title {
+    color: #fff;
+    font-size: 32px;
+    /* font-weight: bold; */
+  }
+  .bs-title-subtext {
+    color: #eee;
+    font-size: 14px;
+  }
+  .bs-header .bs-header-left {
+    flex: 0 0 23.5%;
+    box-sizing: border-box;
+  }
+  .bs-header .bs-header-right {
+    flex: 0 0 76.5%;
+  }
+  .bs-header-right .bs-sons {
+    width: 200px;
+    height: 100%;
+    /* flex布局下，指定子元素 垂直居中 */
+    align-items: center;
+  }
+
+  /* body部分 */
+  .bs-body {
+    width: 100%;
+    height: 92%;
+  }
+  .bs-body .bs-body-left {
+    flex:0 0 76%;
+  }
+  .bs-body-left .bs-body-top {
+    flex:0 0 70%;
+  }
+  .bs-body-left .bs-body-bottom {
+    flex:0 0 29%;
+    box-sizing: border-box;
+    padding: 5px 0;
+  }
+  .bs-body-bottom .bs-sons {
+    flex: 1;
+    box-sizing: border-box;
+    padding: 5px;
+    border-right: 2px solid #269fed73;
+  }
+  .bs-body-bottom .bs-sons:last-child {
+    border-right: 0;
+  }
+  .bs-body .bs-body-right {
+    flex:0 0 23%;
+  }
+  .bs-body-right .bs-body-top {
+    flex:0 0 49.5%;
+  }
+  .bs-body-right .bs-body-bottom {
+    flex:0 0 49.5%;
+  }
+</style>
