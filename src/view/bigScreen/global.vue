@@ -47,6 +47,7 @@
 
 <script>
 import Map from '@/components/echarts/map'
+import {gettime} from '@/utils/methods'
 import {chinaOpt, chinaData, chinaData1, zhejiangOpt, zhejiangData, zhejiangData1} from 'static/data/data'
 export default {
   name: 'bigScreen',
@@ -74,9 +75,9 @@ export default {
     Map
   },
   mounted () {
-    this.gettime()
+    this.timeString = gettime()
     this.interval = setInterval(() => {
-      this.gettime()
+      this.timeString = gettime()
       if (this.echartaData.zhejiangData === zhejiangData) {
         this.echartaData.zhejiangData = zhejiangData1
         this.echartaData.chinaData = chinaData1
@@ -87,35 +88,6 @@ export default {
     }, 60000)
   },
   methods: {
-    gettime () {
-      var today = new Date()
-      var hh = today.getHours()
-      if (hh < 10) hh = '0' + hh
-      var mm = today.getMinutes()
-      if (mm < 10) mm = '0' + mm
-      // var ss = today.getSeconds()
-      // if (ss < 10) ss = '0' + ss
-      this.timeString = this.showLocale(today) + hh + ':' + mm
-    },
-    showLocale (objD) {
-      var str
-      var yy = objD.getYear()
-      if (yy < 1900) yy = yy + 1900
-      var MM = objD.getMonth() + 1
-      if (MM < 10) MM = '0' + MM
-      var dd = objD.getDate()
-      if (dd < 10) dd = '0' + dd
-      // var ww = objD.getDay()
-      // if (ww === 0) ww = '星期日'
-      // if (ww === 1) ww = '星期一'
-      // if (ww === 2) ww = '星期二'
-      // if (ww === 3) ww = '星期三'
-      // if (ww === 4) ww = '星期四'
-      // if (ww === 5) ww = '星期五'
-      // if (ww === 6) ww = '星期六'
-      str = yy + '/' + MM + '/' + dd + ' '
-      return (str)
-    },
     say (params) {
       console.log('接收到信息---' + params)
     }
