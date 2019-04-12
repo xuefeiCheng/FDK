@@ -3,7 +3,7 @@ export const chinaOpt = {
   goDown: true,
   level: 1,
   title: {
-    text: '国家'
+    text: '各省实时拦截情况'
   },
   geo: {
     center: [104.114129, 37.550339],
@@ -132,7 +132,7 @@ export const zhejiangOpt = {
   goDown: false,
   level: 2,
   title: {
-    text: '浙江'
+    text: '各市实时拦截情况'
   },
   geo: {
     center: [119.652866, 29.085903],
