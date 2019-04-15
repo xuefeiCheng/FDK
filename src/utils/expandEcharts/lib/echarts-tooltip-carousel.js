@@ -100,8 +100,6 @@ export function loopShowTooltip (chart, chartOption, options) {
   function autoShowTip () {
     var invalidSeries = 0
     var invalidData = 0
-    console.log(invalidData)
-    console.log(invalidSeries)
     function showTip () {
       // 判断是否更新数据
       if (dataIndex === 0 && !first && typeof options.updateData === 'function') {
