@@ -34,7 +34,9 @@
         <div class="bs-body-bottom border-all flex">
           <div class="bs-sons"></div>
           <div class="bs-sons"></div>
-          <div class="bs-sons"></div>
+          <div class="bs-sons">
+            <Radar :data='echartaData.radarData'></Radar>
+          </div>
         </div>
       </div>
       <div class="bs-body-right flex flex-direction-column flex-space-between">
@@ -47,8 +49,9 @@
 
 <script>
 import Map from '../echarts/map'
+import Radar from '../echarts/radar'
 import {gettime} from '@/utils/methods'
-import {chinaOpt, chinaData, chinaData1, zhejiangOpt, zhejiangData, zhejiangData1} from 'static/data/data'
+import {chinaOpt, chinaData, chinaData1, zhejiangOpt, zhejiangData, zhejiangData1, radarData} from 'static/data/data'
 export default {
   name: 'bigScreen',
   data () {
@@ -62,7 +65,8 @@ export default {
       speedVal: 3000,
       echartaData: {
         chinaData: chinaData,
-        zhejiangData: zhejiangData
+        zhejiangData: zhejiangData,
+        radarData: radarData[0]
       }, // 向下传递数据
       echartsOpt: {
         chinaOpt: chinaOpt,
@@ -72,7 +76,8 @@ export default {
     }
   },
   components: {
-    Map
+    Map,
+    Radar
   },
   mounted () {
     this.timeString = gettime()
@@ -81,9 +86,11 @@ export default {
       if (this.echartaData.zhejiangData === zhejiangData) {
         this.echartaData.zhejiangData = zhejiangData1
         this.echartaData.chinaData = chinaData1
+        this.echartaData.radarData = radarData[2]
       } else {
         this.echartaData.zhejiangData = zhejiangData
         this.echartaData.chinaData = chinaData
+        this.echartaData.radarData = radarData[1]
       }
     }, 60000)
   },

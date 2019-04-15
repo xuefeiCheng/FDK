@@ -175,3 +175,17 @@ export const zhejiangData1 = [
     s_longitude: 121.549792
   }
 ]
+export const radarData = [
+  {
+    value: [60,73,85,40],
+    name: '四川'
+  },
+  {
+    value: [10,23,62,70],
+    name: '北京'
+  },
+  {
+    value: [66,99,50,20],
+    name: '天津'
+  }
+]

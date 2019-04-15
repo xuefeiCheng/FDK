@@ -8,6 +8,7 @@ import 'echarts/lib/echarts'
 import nameMap from '@/utils/nameMap.js'
 import JsonList from '@/utils/expandEcharts/index'
 import {loopShowTooltip} from '@/utils/expandEcharts/lib/echarts-tooltip-carousel'
+// import '@/utils/expandEcharts/lib/autoShowTip'
 export default {
   name: 'mapView',
   props: {
@@ -289,6 +290,15 @@ export default {
       charts.clear()
       charts.setOption(options)
       loopShowTooltip(charts, options, {loopSeries: false, seriesIndex: 0, interval: 5000})
+      // new AutoShowTip(charts, options, 3000, {
+      //   hoverEnable: true,
+      //   autoShow: true,
+      //   loopSeries: 0,
+      //   seriesIndex: 0,
+      //   formatter: function (v) {
+      //     return v.flag + '<br/>' + v.text + ':' + v.value
+      //   }
+      // })
       window.addEventListener('resize', function () {
         charts.resize()
       })
