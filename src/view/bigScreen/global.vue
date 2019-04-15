@@ -46,7 +46,7 @@
 </template>
 
 <script>
-import Map from '@/components/echarts/map'
+import Map from '../echarts/map'
 import {gettime} from '@/utils/methods'
 import {chinaOpt, chinaData, chinaData1, zhejiangOpt, zhejiangData, zhejiangData1} from 'static/data/data'
 export default {
