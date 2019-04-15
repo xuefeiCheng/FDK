@@ -51,7 +51,7 @@
 import Map from '../echarts/map'
 import Radar from '../echarts/radar'
 import {gettime} from '@/utils/methods'
-import {chinaOpt, chinaData, chinaData1, zhejiangOpt, zhejiangData, zhejiangData1, radarData} from 'static/data/data'
+import {chinaOpt, chinaData, chinaData1, zhejiangOpt, zhejiangData, zhejiangData1, radarData, radarData1} from 'static/data/data'
 export default {
   name: 'bigScreen',
   data () {
@@ -66,7 +66,7 @@ export default {
       echartaData: {
         chinaData: chinaData,
         zhejiangData: zhejiangData,
-        radarData: radarData[0]
+        radarData: radarData
       }, // 向下传递数据
       echartsOpt: {
         chinaOpt: chinaOpt,
@@ -86,13 +86,13 @@ export default {
       if (this.echartaData.zhejiangData === zhejiangData) {
         this.echartaData.zhejiangData = zhejiangData1
         this.echartaData.chinaData = chinaData1
-        this.echartaData.radarData = radarData[2]
+        this.echartaData.radarData = radarData1
       } else {
         this.echartaData.zhejiangData = zhejiangData
         this.echartaData.chinaData = chinaData
-        this.echartaData.radarData = radarData[1]
+        this.echartaData.radarData = radarData
       }
-    }, 60000)
+    }, 50000)
   },
   methods: {
     say (params) {

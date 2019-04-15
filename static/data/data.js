@@ -189,3 +189,17 @@ export const radarData = [
     name: '天津'
   }
 ]
+export const radarData1 = [
+  {
+    value: [60,73,85,40],
+    name: '北京----'
+  },
+  {
+    value: [10,23,62,70],
+    name: '天津++++'
+  },
+  {
+    value: [66,99,50,20],
+    name: '四川-1-1-'
+  }
+]

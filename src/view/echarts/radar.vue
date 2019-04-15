@@ -34,18 +34,44 @@ export default {
         '#00d2aa',
         '#0dab8d',
         '#f4acb7'
-      ]
+      ],
+      radarInterval: null
     }
   },
   watch: {
     data () {
       this.radarData = this.data
-      this.drawTransferMap(this.radarData, false)
+      clearInterval(this.radarInterval)
+      this.radarInterval = null
+      let h = this.data.length - 1
+      let i = 0
+      this.radarInterval = setInterval(() => {
+        if (i <= h && i > 0) {
+          this.drawTransferMap(this.radarData[i], false)
+          i++
+        } else {
+          i = 0
+          this.drawTransferMap(this.radarData[i], false)
+          i++
+        }
+      }, 10000)
     }
   },
   mounted () {
     this.radarData = this.data
-    this.drawTransferMap(this.radarData, true)
+    let h = this.data.length
+    let i = 1
+    this.drawTransferMap(this.radarData[0], true)
+    this.radarInterval = setInterval(() => {
+      if (i < h) {
+        this.drawTransferMap(this.radarData[i], false)
+        i++
+      } else {
+        i = 0
+        this.drawTransferMap(this.radarData[i], false)
+        i++
+      }
+    }, 10000)
   },
   methods: {
     drawTransferMap (data, first) {
@@ -135,14 +161,17 @@ export default {
         }
       }
       if (first) {
-        new AutoShowTip(charts, option, 3000, radarAutoInfo)
+        new AutoShowTip(charts, option, 2000, radarAutoInfo)
       } else {
         charts.clearAutoShow()
-        new AutoShowTip(charts, option, 3000, radarAutoInfo)
+        new AutoShowTip(charts, option, 2000, radarAutoInfo)
       }
     }
   },
-  beforeDestroy () {}
+  beforeDestroy () {
+    clearInterval(this.radarInterval)
+    this.radarInterval = null
+  }
 
 }
 </script>
