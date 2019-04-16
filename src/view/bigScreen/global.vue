@@ -21,9 +21,10 @@
             <Map v-on:drawAgain = 'say'
               :data1 = 'echartaData.chinaData'
               :data2 = 'echartaData.zhejiangData'
+              :timeString = 'timeString'
               :options = 'echartsOpt'
             ></Map>
-            <div class="bs-timer">(数据截止至<span style="color: yellow">{{timeString}}</span>)</div>
+            <!-- <div class="bs-timer">(数据截止至<span style="color: yellow">{{timeString}}</span>)</div> -->
             <!-- 左侧展示框 -->
             <!-- 右侧列表滚动 -->
             <div class="list border-all">
@@ -56,7 +57,7 @@ export default {
   name: 'bigScreen',
   data () {
     return {
-      timeString: '2019/04/12 19:00',
+      timeString: '',
       options: {
         border: true,
         shape: 'triangle'
@@ -79,8 +80,10 @@ export default {
     Map,
     Radar
   },
-  mounted () {
+  created () {
     this.timeString = gettime()
+  },
+  mounted () {
     this.interval = setInterval(() => {
       this.timeString = gettime()
       if (this.echartaData.zhejiangData === zhejiangData) {
@@ -92,7 +95,7 @@ export default {
         this.echartaData.chinaData = chinaData
         this.echartaData.radarData = radarData
       }
-    }, 50000)
+    }, 60000)
   },
   methods: {
     say (params) {
