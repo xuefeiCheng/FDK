@@ -20,7 +20,8 @@ export default {
     },
     data2: {
       type: [Object, Array]
-    }
+    },
+    timeString: ''
   },
   data () {
     return {
@@ -85,11 +86,16 @@ export default {
       let options = {
         title: {
           show: true,
-          text: opt.title.text || '标题',
+          text: opt.title.text + '(数据截止至' + '{a|' + this.timeString + '}' + ')' || '标题',
           textStyle: {
             fontWeight: 'normal',
             fontSize: 16,
-            color: '#F1F1F3'
+            color: '#F1F1F3',
+            rich: {
+              a: {
+                color: 'yellow'
+              }
+            }
           },
           top: 20,
           left: 'center'
