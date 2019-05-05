@@ -32,6 +32,7 @@
             </div>
           </box-border>
         </div>
+        <div class="placeHolder"></div>
         <div class="bs-body-bottom border-all flex">
           <div class="bs-sons">
             <ktusers-map :data = 'echartaData.ktusersData'></ktusers-map>
@@ -45,11 +46,13 @@
           </div>
         </div>
       </div>
+      <div class="placeHolder"></div>
       <div class="bs-body-right flex flex-direction-column flex-space-between">
         <div class="bs-body-top border-all">
           <div class="body-title">拦截效率</div>
           <div style="height:calc(100% - 45px);width:100%;background-color:red;"></div>
         </div>
+        <div class="placeHolder"></div>
         <div class="bs-body-bottom border-all">
           <div class="body-title">拦截号段占比</div>
           <div style="height:calc(100% - 45px);width:100%;">
@@ -167,11 +170,11 @@ export default {
     /* margin-right: -340px; */
   }
   .bs-header .bs-header-left {
-    flex: 0 0 23.5%;
+    flex: 1 1 23.5%;
     box-sizing: border-box;
   }
   .bs-header .bs-header-right {
-    flex: 0 0 76.5%;
+    flex: 1 1 76.5%;
   }
   .bs-header-right .bs-sons {
     width: 200px;
@@ -186,10 +189,10 @@ export default {
     height: 92%;
   }
   .bs-body .bs-body-left {
-    flex:0 0 76%;
+    flex: 1 1 76%;
   }
   .bs-body-left .bs-body-top {
-    flex:0 0 70%;
+    flex: 1 1 70%;
   }
   /* 滚动列表 */
   .list {
@@ -201,7 +204,7 @@ export default {
     right: 10px;
   }
   .bs-body-left .bs-body-bottom {
-    flex:0 0 29%;
+    flex: 1 1 29%;
     box-sizing: border-box;
     padding: 5px 0;
   }
@@ -215,10 +218,10 @@ export default {
     border-right: 0;
   }
   .bs-body .bs-body-right {
-    flex:0 0 23%;
+    flex: 1 1 23%;
   }
   .bs-body-right .bs-body-top {
-    flex:0 0 69.5%;
+    flex: 1 1 69.5%;
   }
   .bs-body-right .body-title {
     height: 45px;
@@ -231,6 +234,9 @@ export default {
     padding: 0 10px;
   }
   .bs-body-right .bs-body-bottom {
-    flex:0 0 29.5%;
+    flex: 1 1 29.5%;
+  }
+  .placeHolder {
+    flex: 1 1 1%;
   }
 </style>
