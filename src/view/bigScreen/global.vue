@@ -7,11 +7,15 @@
         <div class="bs-title-subtext">High Frequency Harassment Protection Business</div>
       </div>
       <div class="bs-header-right flex flex-space-between">
-        <div class="bs-sons border-all"></div>
-        <div class="bs-sons border-all"></div>
-        <div class="bs-sons border-all"></div>
-        <div class="bs-sons border-all"></div>
-        <div class="bs-sons border-all"></div>
+        <div v-for="item in itemsData" :key="item.id">
+          <div class="bs-sons">
+            <div class="bs-icon" :style="{backgroundImage:'url(/static/img/bigscreen/'+item.url+'.png)'}"></div>
+            <div class="bs-icon-font">
+              <div class="bs-title">{{item.title}}</div>
+              <div class="bs-subtext">{{item.val}}万</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="bs-body flex flex-space-between">
@@ -26,6 +30,11 @@
             ></Map>
             <!-- <div class="bs-timer">(数据截止至<span style="color: yellow">{{timeString}}</span>)</div> -->
             <!-- 左侧展示框 -->
+            <div class="bs-show-box">
+              <div class="bs-sons">halle</div>
+              <div class="bs-sons">halle</div>
+              <div class="bs-sons">halle</div>
+            </div>
             <!-- 右侧列表滚动 -->
             <div class="list border-all">
               <scroll :items='items' :speed='speedVal'></scroll>
@@ -83,6 +92,38 @@ export default {
         shape: 'triangle'
       },
       items: ['列表第一项', '列表项目2', '这是第三条', '第四条信息'],
+      itemsData: [
+        {
+          id: 1,
+          url: 'user',
+          title: '累计开通用户数',
+          val: 65.2
+        },
+        {
+          id: 2,
+          url: 'add',
+          title: '累计拦截次数',
+          val: 65.2
+        },
+        {
+          id: 3,
+          url: 'wechat',
+          title: '累计关注用户数',
+          val: 65.2
+        },
+        {
+          id: 4,
+          url: 'intercept_add',
+          title: '昨日拦截次数',
+          val: 65.2
+        },
+        {
+          id: 5,
+          url: 'intercept',
+          title: '昨日拦截用户数',
+          val: 65.2
+        }
+      ], // header 数据总览部分
       speedVal: 3000,
       echartaData: {
         chinaData: chinaData,
@@ -170,18 +211,27 @@ export default {
     /* margin-right: -340px; */
   }
   .bs-header .bs-header-left {
-    flex: 0 0 23.5%;
+    flex: 1 1 23.5%;
     box-sizing: border-box;
   }
   .bs-header .bs-header-right {
-    flex: 0 0 76.5%;
+    flex: 1 1 76.5%;
   }
   .bs-header-right .bs-sons {
-    width: 200px;
-    height: 100%;
+    width: 215px;
+    height: 57px;
+    line-height: 57px;
     /* flex布局下，指定子元素 垂直居中 */
     align-items: center;
+    background: url(/static/img/bigscreen/border.png) no-repeat center;
+    background-size: 100% 100%;
+    display: flex;
   }
+  /* header 数据总览部分 */
+  .bs-header-right .bs-sons .bs-icon{width:43px;height:43px;margin:0 5px;background-color:red;background: url(/static/img/bigscreen/user.png) no-repeat center;background-size: 100% 90%;}
+  .bs-header-right .bs-sons .bs-icon-font{height:57px;width:172px;color:#fff;padding:0 5px;}
+  .bs-header-right .bs-sons .bs-icon-font .bs-title{height:30px;line-height:30px;font-size:20px;}
+  .bs-header-right .bs-sons .bs-icon-font .bs-subtext{height:27px;line-height:27px;font-size:14px;font-family: 'timerFont';color: yellow;}
 
   /* body部分 */
   .bs-body {
@@ -193,7 +243,23 @@ export default {
     width: 76%;
   }
   .bs-body-left .bs-body-top {
-    flex: 0 0 70%;
+    flex: 1 1 70%;
+  }
+  /* 地图右侧数据展示框 */
+  .bs-show-box {
+    position:absolute;
+    width:210px;
+    top:10px;
+    left:10px;
+  }
+  .bs-show-box .bs-sons {
+    width:100%;
+    height:96px;
+    background: url(/static/img/bigscreen/bg.png) no-repeat center;
+    background-size: 100% 100%;
+    margin-bottom:5px;
+    box-sizing: border-box;
+    padding: 10px 15px;
   }
   /* 滚动列表 */
   .list {
@@ -205,14 +271,12 @@ export default {
     right: 10px;
   }
   .bs-body-left .bs-body-bottom {
-    flex: 0 0 29%;
+    flex: 1 1 29%;
     box-sizing: border-box;
     padding: 5px 0;
   }
   .bs-body-bottom .bs-sons {
     flex: 1;
-    width: 100%;
-    height: 100%;
     box-sizing: border-box;
     padding: 5px;
     border-right: 2px solid #269fed73;
@@ -225,7 +289,7 @@ export default {
     width: 23%;
   }
   .bs-body-right .bs-body-top {
-    flex: 0 0 69.5%;
+    flex: 1 1 69.5%;
   }
   .bs-body-right .body-title {
     height: 45px;
@@ -238,12 +302,13 @@ export default {
     padding: 0 10px;
   }
   .bs-body-right .bs-body-bottom {
-    flex: 0 0 29.5%;
+    flex: 1 1 29.5%;
   }
+/* 占位符 */
   .placeHolder {
-    flex: 0 0 1%;
+    flex: 1 1 1%;
   }
-  @media screen and (max-width: 1366px){
+    @media screen and (max-width: 1446px){
     .placeHolder {
       background-color: red;
     }
@@ -262,5 +327,8 @@ export default {
       /* flex布局下，指定子元素 垂直居中 */
       align-items: center;
     }
+    .bs-header-right .bs-sons .bs-icon-font{height:57px;width:107px;color:#fff;padding: 0;}
+    .bs-header-right .bs-sons .bs-icon-font .bs-title{height:30px;line-height:30px;font-size:14px;}
+    .bs-header-right .bs-sons .bs-icon-font .bs-subtext{height:27px;line-height:27px;font-size:12px;}
   }
 </style>
