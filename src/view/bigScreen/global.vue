@@ -33,16 +33,29 @@
           </box-border>
         </div>
         <div class="bs-body-bottom border-all flex">
-          <div class="bs-sons"></div>
-          <div class="bs-sons"></div>
           <div class="bs-sons">
-            <Radar :data='echartaData.radarData'></Radar>
+            <ktusers-map :data = 'echartaData.ktusersData'></ktusers-map>
+          </div>
+          <div class="bs-sons">
+            <ljhj-map :data = 'echartaData.ljhjData'></ljhj-map>
+          </div>
+          <div class="bs-sons">
+            <!-- <Radar :data='echartaData.radarData'></Radar> -->
+            <lj-foreach-map :data = 'echartaData.ljtimesForeach'></lj-foreach-map>
           </div>
         </div>
       </div>
       <div class="bs-body-right flex flex-direction-column flex-space-between">
-        <div class="bs-body-top border-all"></div>
-        <div class="bs-body-bottom border-all"></div>
+        <div class="bs-body-top border-all">
+          <div class="body-title">拦截效率</div>
+          <div style="height:calc(100% - 45px);width:100%;background-color:red;"></div>
+        </div>
+        <div class="bs-body-bottom border-all">
+          <div class="body-title">拦截号段占比</div>
+          <div style="height:calc(100% - 45px);width:100%;">
+            <ljhd-map :data = 'echartaData.ljhdData'></ljhd-map>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -51,8 +64,12 @@
 <script>
 import Map from '../echarts/map'
 import Radar from '../echarts/radar'
+import ljhdMap from '../echarts/ljhd'
+import ktusersMap from '../echarts/ktusers'
+import ljhjMap from '../echarts/ljhj'
+import ljForeachMap from '../echarts/ljForeach'
 import {gettime} from '@/utils/methods'
-import {chinaOpt, chinaData, chinaData1, zhejiangOpt, zhejiangData, zhejiangData1, radarData, radarData1} from 'static/data/data'
+import {chinaOpt, chinaData, chinaData1, zhejiangOpt, zhejiangData, zhejiangData1, radarData, radarData1, ljhdData, ktusersData, ljhjData, ljtimesForeach} from 'static/data/data'
 export default {
   name: 'bigScreen',
   data () {
@@ -67,7 +84,11 @@ export default {
       echartaData: {
         chinaData: chinaData,
         zhejiangData: zhejiangData,
-        radarData: radarData
+        radarData: radarData,
+        ljhdData: ljhdData, // 拦截号码段
+        ktusersData: ktusersData, // 开通用户数
+        ljhjData: ljhjData, // 拦截/呼叫情况
+        ljtimesForeach: ljtimesForeach // 户均拦截次数
       }, // 向下传递数据
       echartsOpt: {
         chinaOpt: chinaOpt,
@@ -78,7 +99,7 @@ export default {
   },
   components: {
     Map,
-    Radar
+    Radar, ljhdMap, ktusersMap, ljhjMap, ljForeachMap
   },
   created () {
     this.timeString = gettime()
@@ -197,9 +218,19 @@ export default {
     flex:0 0 23%;
   }
   .bs-body-right .bs-body-top {
-    flex:0 0 49.5%;
+    flex:0 0 69.5%;
+  }
+  .bs-body-right .body-title {
+    height: 45px;
+    line-height: 45px;
+    font-size: 16px;
+    color:  #fff;
+    font-weight: bold;
+    border-bottom: 1px solid #269fed73;
+    box-sizing: border-box;
+    padding: 0 10px;
   }
   .bs-body-right .bs-body-bottom {
-    flex:0 0 49.5%;
+    flex:0 0 29.5%;
   }
 </style>
