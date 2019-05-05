@@ -138,6 +138,9 @@ export default {
       }
       charts.clear()
       charts.setOption(options)
+      window.addEventListener('resize', function () {
+        charts.resize()
+      })
     }
   },
   beforeDestroy () {}
