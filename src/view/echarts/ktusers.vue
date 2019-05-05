@@ -21,8 +21,10 @@ export default {
     }
   },
   mounted () {
-    this.ktusersData = this.data
-    this.drawKtusers()
+    this.$nextTick(() => {
+      this.ktusersData = this.data
+      this.drawKtusers()
+    })
   },
   methods: {
     drawKtusers () {
@@ -41,7 +43,7 @@ export default {
         toolbox: {},
         grid: {
           containLabel: true,
-          bottom: '0',
+          bottom: 0,
           left: 10,
           right: 10
         },

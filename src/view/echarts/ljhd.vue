@@ -21,8 +21,10 @@ export default {
     }
   },
   mounted () {
-    this.hdljData = this.data
-    this.drawLjhd()
+    this.$nextTick(() => {
+      this.hdljData = this.data
+      this.drawLjhd()
+    })
   },
   methods: {
     drawLjhd () {
@@ -30,10 +32,10 @@ export default {
       let charts = this.$echarts.init(document.getElementById('ljhd'))
       let options = {
         grid: {
-          top: '20',
-          bottom: '20',
-          right: '60',
-          left: '40'
+          top: 20,
+          bottom: 20,
+          right: 60,
+          left: 40
         },
         xAxis: {
           show: false

@@ -21,8 +21,10 @@ export default {
     }
   },
   mounted () {
-    this.ljhjData = this.data
-    this.drawLjhj()
+    this.$nextTick(() => {
+      this.ljhjData = this.data
+      this.drawLjhj()
+    })
   },
   methods: {
     drawLjhj () {
@@ -49,7 +51,7 @@ export default {
           }
         },
         grid: {
-          bottom: '0',
+          bottom: 0,
           left: 10,
           right: 10,
           containLabel: true

@@ -170,11 +170,11 @@ export default {
     /* margin-right: -340px; */
   }
   .bs-header .bs-header-left {
-    flex: 1 1 23.5%;
+    flex: 0 0 23.5%;
     box-sizing: border-box;
   }
   .bs-header .bs-header-right {
-    flex: 1 1 76.5%;
+    flex: 0 0 76.5%;
   }
   .bs-header-right .bs-sons {
     width: 200px;
@@ -193,7 +193,7 @@ export default {
     width: 76%;
   }
   .bs-body-left .bs-body-top {
-    flex: 1 1 70%;
+    flex: 0 0 70%;
   }
   /* 滚动列表 */
   .list {
@@ -205,12 +205,14 @@ export default {
     right: 10px;
   }
   .bs-body-left .bs-body-bottom {
-    flex: 1 1 29%;
+    flex: 0 0 29%;
     box-sizing: border-box;
     padding: 5px 0;
   }
   .bs-body-bottom .bs-sons {
     flex: 1;
+    width: 100%;
+    height: 100%;
     box-sizing: border-box;
     padding: 5px;
     border-right: 2px solid #269fed73;
@@ -223,7 +225,7 @@ export default {
     width: 23%;
   }
   .bs-body-right .bs-body-top {
-    flex: 1 1 69.5%;
+    flex: 0 0 69.5%;
   }
   .bs-body-right .body-title {
     height: 45px;
@@ -236,10 +238,10 @@ export default {
     padding: 0 10px;
   }
   .bs-body-right .bs-body-bottom {
-    flex: 1 1 29.5%;
+    flex: 0 0 29.5%;
   }
   .placeHolder {
-    flex: 1 1 1%;
+    flex: 0 0 1%;
   }
   @media screen and (max-width: 1366px){
     .placeHolder {

@@ -21,8 +21,10 @@ export default {
     }
   },
   mounted () {
-    this.ljtimesForeach = this.data
-    this.drawLjforeach()
+    this.$nextTick(() => {
+      this.ljtimesForeach = this.data
+      this.drawLjforeach()
+    })
   },
   methods: {
     drawLjforeach () {

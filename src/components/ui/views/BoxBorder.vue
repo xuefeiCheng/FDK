@@ -30,6 +30,7 @@ export default {
   box-sizing: border-box;
   height: 100%;
   flex: 1;
+  overflow: hidden;
 }
 .box-border {
   /*
