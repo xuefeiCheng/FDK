@@ -189,7 +189,8 @@ export default {
     height: 92%;
   }
   .bs-body .bs-body-left {
-    flex: 1 1 76%;
+    flex: none;
+    width: 76%;
   }
   .bs-body-left .bs-body-top {
     flex: 1 1 70%;
@@ -218,7 +219,8 @@ export default {
     border-right: 0;
   }
   .bs-body .bs-body-right {
-    flex: 1 1 23%;
+    flex: none;
+    width: 23%;
   }
   .bs-body-right .bs-body-top {
     flex: 1 1 69.5%;
@@ -238,5 +240,25 @@ export default {
   }
   .placeHolder {
     flex: 1 1 1%;
+  }
+  @media screen and (max-width: 1366px){
+    .placeHolder {
+      background-color: red;
+    }
+    .bs-title {
+      color: #fff;
+      font-size: 28px;
+      /* font-weight: bold; */
+    }
+    .bs-title-subtext {
+      color: #eee;
+      font-size: 12px;
+    }
+    .bs-header-right .bs-sons {
+      width: 150px;
+      height: 100%;
+      /* flex布局下，指定子元素 垂直居中 */
+      align-items: center;
+    }
   }
 </style>
