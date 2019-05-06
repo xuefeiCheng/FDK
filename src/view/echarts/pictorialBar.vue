@@ -12,25 +12,26 @@ export default {
   },
   data () {
     return {
-      hdljData: {}
+      pictorialBarData: {}
     }
   },
   watch: {
     data () {
-      this.hdljData = this.data
+      this.pictorialBarData = this.data
     }
   },
   mounted () {
     this.$nextTick(() => {
-      this.hdljData = this.data
+      this.pictorialBarData = this.data
       this.drawLjhd()
     })
   },
   methods: {
     drawLjhd () {
-      // var _this = this
+      var _this = this
       let charts = this.$echarts.init(document.getElementById('pictorialBar'))
-      var maxData = 2000
+      var maxData = _this.pictorialBarData.total
+      var data = _this.pictorialBarData.value
       let options = {
         tooltip: {},
         xAxis: {
@@ -88,7 +89,7 @@ export default {
           z: -180, // 图层
           symbolRepeat: null,
           symbolBoundingData: maxData,
-          data: [1200],
+          data: [data],
           animationEasing: 'elasticOut'
         },
         { // 内边框
@@ -107,7 +108,7 @@ export default {
           z: -20,
           symbolRepeat: null,
           symbolBoundingData: maxData,
-          data: [1200],
+          data: [data],
           animationEasing: 'elasticOut'
         },
         {
@@ -124,7 +125,7 @@ export default {
           symbolClip: true,
           symbolSize: 20,
           symbolBoundingData: maxData,
-          data: [1200],
+          data: [data],
           z: 99999999,
           animationEasing: 'elasticOut',
           animationDelay: function (dataIndex, params) {
@@ -158,7 +159,7 @@ export default {
           symbol: 'rect',
           symbolSize: 20,
           symbolBoundingData: maxData,
-          data: [1200],
+          data: [data],
           z: 99999,
           animationEasing: 'elasticOut',
           animationDelay: function (dataIndex, params) {

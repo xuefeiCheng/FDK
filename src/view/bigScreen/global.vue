@@ -87,7 +87,7 @@
             </div>
             <!-- 单轴 -->
             <div style="height:82px;width:100%;">
-              <pictorial-bar :data = 'echartaData.ljhdData'></pictorial-bar>
+              <pictorial-bar :data = 'echartaData.pictorialBarData'></pictorial-bar>
             </div>
             <!-- 折线图 -->
             <div style="height:calc(100% - 160px);width:100%;background-color:blue;"></div>
@@ -114,7 +114,7 @@ import ljhjMap from '../echarts/ljhj'
 import ljForeachMap from '../echarts/ljForeach'
 import pictorialBar from '../echarts/pictorialBar'
 import {gettime} from '@/utils/methods'
-import {chinaOpt, chinaData, chinaData1, zhejiangOpt, zhejiangData, zhejiangData1, radarData, radarData1, ljhdData, ktusersData, ljhjData, ljtimesForeach} from 'static/data/data'
+import {chinaOpt, chinaData, chinaData1, zhejiangOpt, zhejiangData, zhejiangData1, radarData, radarData1, ljhdData, ktusersData, ljhjData, ljtimesForeach, pictorialBarData} from 'static/data/data'
 export default {
   name: 'bigScreen',
   data () {
@@ -165,7 +165,8 @@ export default {
         ljhdData: ljhdData, // 拦截号码段
         ktusersData: ktusersData, // 开通用户数
         ljhjData: ljhjData, // 拦截/呼叫情况
-        ljtimesForeach: ljtimesForeach // 户均拦截次数
+        ljtimesForeach: ljtimesForeach, // 户均拦截次数
+        pictorialBarData: pictorialBarData // 用户周拦截率
       }, // 向下传递数据
       echartsOpt: {
         chinaOpt: chinaOpt,

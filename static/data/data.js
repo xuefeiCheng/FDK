@@ -247,3 +247,9 @@ export const ljtimesForeach = {
   ]
 }
 // 用户周拦截率
+export const pictorialBarData = {
+  // 总数
+  // 拦截数值
+  total: 2000,
+  value: 1200
+}
