@@ -31,9 +31,18 @@
             <!-- <div class="bs-timer">(数据截止至<span style="color: yellow">{{timeString}}</span>)</div> -->
             <!-- 左侧展示框 -->
             <div class="bs-show-box">
-              <div class="bs-sons">halle</div>
-              <div class="bs-sons">halle</div>
-              <div class="bs-sons">halle</div>
+              <div class="bs-sons">
+                <div class="bs-title">总呼叫次数</div>
+                <div class="bs-subtext-num">509.992</div>
+              </div>
+              <div class="bs-sons">
+                <div class="bs-title">拦截次数</div>
+                <div class="bs-subtext-num">108.992</div>
+              </div>
+              <div class="bs-sons">
+                <div class="bs-title">拦截用户数</div>
+                <div class="bs-subtext-num">1142</div>
+              </div>
             </div>
             <!-- 右侧列表滚动 -->
             <div class="list border-all">
@@ -260,7 +269,16 @@ export default {
     background-size: 100% 100%;
     margin-bottom:5px;
     box-sizing: border-box;
-    padding: 10px 15px;
+    padding: 15px;
+  }
+  .bs-show-box .bs-sons .bs-title{
+    font-size: 16px;
+  }
+  .bs-show-box .bs-sons .bs-subtext-num {
+    font-family: 'timerFont';
+    font-size: 30px;
+    text-align: center;
+    color: lightblue;
   }
   /* 滚动列表 */
   .list {
