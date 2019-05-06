@@ -2,7 +2,7 @@
 <!-- 列表无缝滚动 组件 -->
   <div :class="{anim: animate}">
     <ul v-for="(item, index) in itemsList" :key="index">
-      <li>{{item}}</li>
+      <li class="liStyle">{{item.time}} <span class="c-blue">{{item.city}}</span> 拦截通话 <span class="c-yellow timeFont itemNum">{{item.num}} </span>次</li>
     </ul>
   </div>
 </template>
@@ -15,7 +15,13 @@ export default {
       // 数据
       type: Array,
       default: function () {
-        return ['1', '2', '3']
+        return [
+          {
+            time: '16:03',
+            city: '北京',
+            num: 652
+          }
+        ]
       }
     },
     speed: {
@@ -64,5 +70,11 @@ export default {
   transition: all 0.5s;
   /* 监听 所有变化 过渡时间为0.5s */
   /* margin-top: -5px; */
+}
+.liStyle {
+  display:block;height:40px;line-height:40px;color:#fff;font-size:14px;text-align:right;padding:0 10px;
+}
+.itemNum {
+  font-size: 20px;
 }
 </style>

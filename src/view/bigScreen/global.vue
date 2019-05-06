@@ -45,7 +45,7 @@
               </div>
             </div>
             <!-- 右侧列表滚动 -->
-            <div class="list border-all">
+            <div class="list">
               <scroll :items='items' :speed='speedVal'></scroll>
             </div>
           </box-border>
@@ -127,7 +127,58 @@ export default {
         border: true,
         shape: 'triangle'
       },
-      items: ['列表第一项', '列表项目2', '这是第三条', '第四条信息'],
+      items: [
+        {
+          time: '16:03',
+          city: '北京',
+          num: 652
+        },
+        {
+          time: '16:03',
+          city: '天津',
+          num: 1009
+        },
+        {
+          time: '16:03',
+          city: '上海',
+          num: 232
+        },
+        {
+          time: '16:03',
+          city: '浙江',
+          num: 2016
+        },
+        {
+          time: '16:03',
+          city: '山东',
+          num: 2016
+        },
+        {
+          time: '16:03',
+          city: '广西',
+          num: 2016
+        },
+        {
+          time: '16:03',
+          city: '四川',
+          num: 2016
+        },
+        {
+          time: '16:03',
+          city: '福建',
+          num: 2016
+        },
+        {
+          time: '16:03',
+          city: '广州',
+          num: 2016
+        },
+        {
+          time: '16:03',
+          city: '河南',
+          num: 2016
+        }
+      ],
       itemsData: [
         {
           id: 1,
@@ -313,7 +364,7 @@ export default {
   .list {
     position: absolute;
     width: 300px;
-    height: 500px;
+    height: 385px;
     overflow: hidden;
     top: 10px;
     right: 10px;

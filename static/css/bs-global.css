@@ -15,3 +15,12 @@
 .flex-space-between {
   justify-content: space-between;
 }
+.c-blue {
+  color: lightseagreen;
+}
+.c-yellow{
+  color: yellow;
+}
+.timeFont {
+  font-family: 'timerFont';
+}
