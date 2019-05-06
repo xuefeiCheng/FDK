@@ -68,7 +68,18 @@
       <div class="bs-body-right flex flex-direction-column flex-space-between">
         <div class="bs-body-top border-all">
           <div class="body-title">拦截效率</div>
-          <div style="height:calc(100% - 45px);width:100%;background-color:red;"></div>
+          <div style="height:calc(100% - 45px);width:100%;background-color:red;">
+            <!-- 数据总览 -->
+            <div class="flex flex-space-between bs-show-box-1">
+              <div class="bs-sons">1</div>
+              <div class="bs-sons">2</div>
+              <div class="bs-sons">3</div>
+            </div>
+            <!-- 单轴 -->
+            <div style="height:122px;width:100%;background-color:yellow;"></div>
+            <!-- 折线图 -->
+            <div style="height:calc(100% - 200px);width:100%;background-color:blue;"></div>
+          </div>
         </div>
         <div class="placeHolder"></div>
         <div class="bs-body-bottom border-all">
@@ -319,6 +330,13 @@ export default {
     border-bottom: 1px solid #269fed73;
     box-sizing: border-box;
     padding: 0 10px;
+  }
+  /* 拦截效率 数据总览部分 */
+  .bs-body-right .bs-body-top .bs-show-box-1{
+    height:78px;box-sizing: border-box;padding:10px 5px;background-color:yellow;
+  }
+  .bs-body-right .bs-body-top .bs-show-box-1 .bs-sons{
+    flex:1;margin:0 5px;height:58px;background-color:red;
   }
   .bs-body-right .bs-body-bottom {
     flex: 1 1 29.5%;
