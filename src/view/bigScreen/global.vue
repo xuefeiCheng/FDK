@@ -268,7 +268,7 @@ export default {
   /* header 数据总览部分 */
   .bs-header-right .bs-sons .bs-icon{width:43px;height:43px;margin:0 5px;background-color:red;background: url(/static/img/bigscreen/user.png) no-repeat center;background-size: 100% 90%;}
   .bs-header-right .bs-sons .bs-icon-font{height:57px;width:172px;color:#fff;padding:0 5px;}
-  .bs-header-right .bs-sons .bs-icon-font .bs-title{height:30px;line-height:30px;font-size:20px;}
+  .bs-header-right .bs-sons .bs-icon-font .bs-title{height:30px;line-height:30px;font-size:18px;}
   .bs-header-right .bs-sons .bs-icon-font .bs-subtext-num{height:27px;line-height:27px;font-size:20px;font-family: 'timerFont';color: yellow;}  
   .bs-header-right .bs-sons .bs-icon-font .bs-subtext{height:27px;line-height:27px;font-size:14px;}
 
