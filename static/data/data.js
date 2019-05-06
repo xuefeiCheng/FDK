@@ -246,3 +246,4 @@ export const ljtimesForeach = {
     [2000, 3000, 2500]
   ]
 }
+// 用户周拦截率

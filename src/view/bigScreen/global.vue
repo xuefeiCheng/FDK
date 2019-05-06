@@ -68,7 +68,7 @@
       <div class="bs-body-right flex flex-direction-column flex-space-between">
         <div class="bs-body-top border-all">
           <div class="body-title">拦截效率</div>
-          <div style="height:calc(100% - 45px);width:100%;background-color:red;">
+          <div style="height:calc(100% - 45px);width:100%;">
             <!-- 数据总览 -->
             <div class="flex flex-space-between bs-show-box-1">
               <div class="bs-sons">
@@ -86,9 +86,11 @@
               </div>
             </div>
             <!-- 单轴 -->
-            <div style="height:122px;width:100%;background-color:yellow;"></div>
+            <div style="height:82px;width:100%;">
+              <pictorial-bar :data = 'echartaData.ljhdData'></pictorial-bar>
+            </div>
             <!-- 折线图 -->
-            <div style="height:calc(100% - 200px);width:100%;background-color:blue;"></div>
+            <div style="height:calc(100% - 160px);width:100%;background-color:blue;"></div>
           </div>
         </div>
         <div class="placeHolder"></div>
@@ -110,6 +112,7 @@ import ljhdMap from '../echarts/ljhd'
 import ktusersMap from '../echarts/ktusers'
 import ljhjMap from '../echarts/ljhj'
 import ljForeachMap from '../echarts/ljForeach'
+import pictorialBar from '../echarts/pictorialBar'
 import {gettime} from '@/utils/methods'
 import {chinaOpt, chinaData, chinaData1, zhejiangOpt, zhejiangData, zhejiangData1, radarData, radarData1, ljhdData, ktusersData, ljhjData, ljtimesForeach} from 'static/data/data'
 export default {
@@ -173,7 +176,7 @@ export default {
   },
   components: {
     Map,
-    Radar, ljhdMap, ktusersMap, ljhjMap, ljForeachMap
+    Radar, ljhdMap, ktusersMap, ljhjMap, ljForeachMap, pictorialBar
   },
   created () {
     this.timeString = gettime()
@@ -344,7 +347,6 @@ export default {
   /* 拦截效率 数据总览部分 */
   .bs-body-right .bs-body-top .bs-show-box-1{
     height:78px;box-sizing: border-box;padding:10px 5px;
-    background-color:yellow;
   }
   .bs-body-right .bs-body-top .bs-show-box-1 .bs-sons{
     flex:1;
