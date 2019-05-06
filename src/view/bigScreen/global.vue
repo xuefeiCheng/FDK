@@ -443,7 +443,7 @@ export default {
       font-size: 12px;
     }
     .bs-header-right .bs-sons {
-      width: 150px;
+      width: 160px;
       height: 100%;
       /* flex布局下，指定子元素 垂直居中 */
       align-items: center;
@@ -452,5 +452,21 @@ export default {
     .bs-header-right .bs-sons .bs-icon-font .bs-title{height:30px;line-height:30px;font-size:14px;}
     .bs-header-right .bs-sons .bs-icon-font .bs-subtext-num{height:27px;line-height:27px;font-size:14px;font-family: 'timerFont';color: yellow;}  
     .bs-header-right .bs-sons .bs-icon-font .bs-subtext{height:27px;line-height:27px;font-size:12px;}
+    .bs-show-box-1 .bs-sons .bs-title {font-size: 12px;}
+    /* 布局修改 */
+    .bs-body .bs-body-left {
+      flex: none;
+      width: 69%;
+    }
+    .bs-body .bs-body-right {
+      flex: none;
+      width: 30%;
+    }
+    .list {
+      height: 200px;
+    }
+    .bs-header {
+      /* 小分辨率下 单独写样式 否则高度溢出 */
+    }
   }
 </style>
