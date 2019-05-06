@@ -72,7 +72,7 @@ export default {
           top: 'center',
           // height: 200,
           left: 120,
-          right: 10
+          right: 15
         },
         series: [{ // 外边框
           name: '',
