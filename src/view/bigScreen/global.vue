@@ -90,7 +90,9 @@
               <pictorial-bar :data = 'echartaData.pictorialBarData'></pictorial-bar>
             </div>
             <!-- 折线图 -->
-            <div style="height:calc(100% - 160px);width:100%;background-color:blue;"></div>
+            <div style="height:calc(100% - 160px);width:100%;">
+              <lj-week :data = 'echartaData.ljWeekData'></lj-week>
+            </div>
           </div>
         </div>
         <div class="placeHolder"></div>
@@ -113,8 +115,9 @@ import ktusersMap from '../echarts/ktusers'
 import ljhjMap from '../echarts/ljhj'
 import ljForeachMap from '../echarts/ljForeach'
 import pictorialBar from '../echarts/pictorialBar'
+import ljWeek from '../echarts/ljWeek'
 import {gettime} from '@/utils/methods'
-import {chinaOpt, chinaData, chinaData1, zhejiangOpt, zhejiangData, zhejiangData1, radarData, radarData1, ljhdData, ktusersData, ljhjData, ljtimesForeach, pictorialBarData} from 'static/data/data'
+import {chinaOpt, chinaData, chinaData1, zhejiangOpt, zhejiangData, zhejiangData1, radarData, radarData1, ljhdData, ktusersData, ljhjData, ljtimesForeach, pictorialBarData, ljWeekData} from 'static/data/data'
 export default {
   name: 'bigScreen',
   data () {
@@ -166,7 +169,8 @@ export default {
         ktusersData: ktusersData, // 开通用户数
         ljhjData: ljhjData, // 拦截/呼叫情况
         ljtimesForeach: ljtimesForeach, // 户均拦截次数
-        pictorialBarData: pictorialBarData // 用户周拦截率
+        pictorialBarData: pictorialBarData, // 用户周拦截率
+        ljWeekData: ljWeekData // 拦截次数最近7天日趋势
       }, // 向下传递数据
       echartsOpt: {
         chinaOpt: chinaOpt,
@@ -177,7 +181,7 @@ export default {
   },
   components: {
     Map,
-    Radar, ljhdMap, ktusersMap, ljhjMap, ljForeachMap, pictorialBar
+    Radar, ljhdMap, ktusersMap, ljhjMap, ljForeachMap, pictorialBar, ljWeek
   },
   created () {
     this.timeString = gettime()

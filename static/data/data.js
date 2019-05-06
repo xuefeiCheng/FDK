@@ -253,3 +253,8 @@ export const pictorialBarData = {
   total: 2000,
   value: 1200
 }
+// 拦截次数最近7天日趋势
+export const ljWeekData = {
+  num: [948, 896, 941, 801, 524, 758, 947],
+  time: ['04/30', '05/01', '05/02', '05/03', '05/04', '05/05', '05/06']
+}
