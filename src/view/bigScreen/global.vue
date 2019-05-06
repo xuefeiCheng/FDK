@@ -388,7 +388,7 @@ export default {
     width: 23%;
   }
   .bs-body-right .bs-body-top {
-    flex: 1 1 69.5%;
+    flex: 1 1 59.5%;
   }
   .bs-body-right .body-title {
     height: 45px;
@@ -423,7 +423,7 @@ export default {
     color: yellow;
   }
   .bs-body-right .bs-body-bottom {
-    flex: 1 1 29.5%;
+    flex: 1 1 39.5%;
   }
 /* 占位符 */
   .placeHolder {
