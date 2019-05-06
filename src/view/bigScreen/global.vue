@@ -71,9 +71,19 @@
           <div style="height:calc(100% - 45px);width:100%;background-color:red;">
             <!-- 数据总览 -->
             <div class="flex flex-space-between bs-show-box-1">
-              <div class="bs-sons">1</div>
-              <div class="bs-sons">2</div>
-              <div class="bs-sons">3</div>
+              <div class="bs-sons">
+                <div class="bs-title">用户日拦截率</div>
+                <div class="bs-subtext-num">14 %</div>
+              </div>
+              <div class="bs-sons">
+                <div class="bs-title">通话日拦截率</div>
+                <div class="bs-subtext-num">14 %</div>
+              </div>
+              <div class="bs-sons">
+                <!-- 分辨率小的时候需要单独处理 -->
+                <div class="bs-title">用户日均拦截次数</div>
+                <div class="bs-subtext-num">445282</div>
+              </div>
             </div>
             <!-- 单轴 -->
             <div style="height:122px;width:100%;background-color:yellow;"></div>
@@ -333,10 +343,26 @@ export default {
   }
   /* 拦截效率 数据总览部分 */
   .bs-body-right .bs-body-top .bs-show-box-1{
-    height:78px;box-sizing: border-box;padding:10px 5px;background-color:yellow;
+    height:78px;box-sizing: border-box;padding:10px 5px;
+    background-color:yellow;
   }
   .bs-body-right .bs-body-top .bs-show-box-1 .bs-sons{
-    flex:1;margin:0 5px;height:58px;background-color:red;
+    flex:1;
+    margin:0 5px;
+    height:58px;
+    background: url(/static/img/bigscreen/bg1.png) no-repeat center;
+    background-size: 100% 100%;
+    box-sizing: border-box;
+    padding:5px;
+  }
+  .bs-show-box-1 .bs-sons .bs-title{
+    font-size: 14px;
+  }
+  .bs-show-box-1 .bs-sons .bs-subtext-num {
+    font-family: 'timerFont';
+    font-size: 18px;
+    text-align: center;
+    color: yellow;
   }
   .bs-body-right .bs-body-bottom {
     flex: 1 1 29.5%;
