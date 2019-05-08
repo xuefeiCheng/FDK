@@ -108,6 +108,7 @@
 </template>
 
 <script>
+import '@/utils/reload.js'
 import Map from '../echarts/map'
 import Radar from '../echarts/radar'
 import ljhdMap from '../echarts/ljhd'
@@ -465,8 +466,7 @@ export default {
     .list {
       height: 200px;
     }
-    .bs-header {
-      /* 小分辨率下 单独写样式 否则高度溢出 */
-    }
+    /* 小分辨率下 单独写样式 否则高度溢出 */
+    /* .bs-header {} */
   }
 </style>
