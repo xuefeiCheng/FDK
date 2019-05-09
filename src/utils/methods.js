@@ -59,7 +59,21 @@ export function GetDateStr (AddDayCount) {
   if (d < 10) d = '0' + d
   return y + '' + m + '' + d
 }
-
+// 指定日期的前一天
+export function GetYesterdayStr (time) {
+  time = time.substring(0, 4) + '/' + time.substring(4, 6) + '/' + time.substring(6, 8)
+  let today = new Date(time)
+  let yesterday = today.getTime() - 1000 * 60 * 60 * 24
+  let dd = new Date()
+  dd.setTime(yesterday)
+  var y = dd.getFullYear()
+  if (y < 1900) y = y + 1900
+  var m = dd.getMonth() + 1 // 获取当前月份的日期
+  if (m < 10) m = '0' + m
+  var d = dd.getDate()
+  if (d < 10) d = '0' + d
+  return y + '' + m + '' + d
+}
 // 数组对象 去重
 // 参数 数组对象 去重依据（某个属性）
 // 返回 去重后的数组对象
